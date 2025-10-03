@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - HealthSync</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.75rem;">
+                    <div class="logo-icon">H</div>
+                    <span>HealthSync</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="support.html" class="nav-link">Support</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link login-btn">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="signup.html" class="nav-link signup-btn">Sign Up</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background: linear-gradient(135deg, #e0f2fe 0%, #f0fdfa 100%); padding: 6rem 0 4rem; margin-top: 4rem;">
+        <div class="container">
+            <div class="hero-container" style="grid-template-columns: 1fr; text-align: center; gap: 2rem;">
+                <div class="hero-content">
+                    <h1 class="hero-title">Get in Touch</h1>
+                    <p class="hero-description">
+                        We're here to help you unify your health data and improve healthcare coordination. 
+                        Reach out to us for partnerships, support, or general inquiries.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Options -->
+    <section class="features-section" style="padding: 4rem 0;">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card" style="text-align: center;">
+                    <div class="feature-icon">📞</div>
+                    <h3>Phone Support</h3>
+                    <p><strong>1-800-HEALTH-SYNC</strong><br>Available Monday-Friday, 9AM-6PM EST</p>
+                    <p style="font-size: 0.875rem; color: var(--text-light);">For urgent healthcare data issues</p>
+                </div>
+                <div class="feature-card" style="text-align: center;">
+                    <div class="feature-icon">✉️</div>
+                    <h3>Email Us</h3>
+                    <p><strong>hello@healthsync.com</strong><br>General inquiries and partnerships</p>
+                    <p style="font-size: 0.875rem; color: var(--text-light);">Response within 24 hours</p>
+                </div>
+                <div class="feature-card" style="text-align: center;">
+                    <div class="feature-icon">💬</div>
+                    <h3>Live Chat</h3>
+                    <p><strong>Available on Dashboard</strong><br>Instant support for technical issues</p>
+                    <p style="font-size: 0.875rem; color: var(--text-light);">Real-time assistance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="problem-section" style="padding: 5rem 0; background: var(--bg-light);">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2 class="section-title" style="text-align: center;">Send Us a Message</h2>
+                <form class="contact-form" id="contactForm" style="background: white; padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-light); border-radius: var(--radius-md);">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-light); border-radius: var(--radius-md);">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-light); border-radius: var(--radius-md);">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-light); border-radius: var(--radius-md);">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label for="inquiryType">Type of Inquiry *</label>
+                        <select id="inquiryType" name="inquiryType" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-light); border-radius: var(--radius-md);">
+                            <option value="">Select an option</option>
+                            <option value="general">General Information</option>
+                            <option value="technical">Technical Support</option>
+                            <option value="partnership">Partnership Opportunity</option>
+                            <option value="healthcare">Healthcare Provider Integration</option>
+                            <option value="billing">Billing Question</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-light); border-radius: var(--radius-md); resize: vertical;"></textarea>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label style="display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.875rem;">
+                            <input type="checkbox" required style="margin-top: 0.25rem;">
+                            <span>I agree to the <a href="#" style="color: var(--primary);">Privacy Policy</a> and allow HealthSync to contact me regarding my inquiry.</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.125rem;">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Section -->
+    <section class="features-section" style="padding: 5rem 0;">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Partnership Opportunities</h2>
+            <div class="features-grid">
+                <div class="feature-card" style="text-align: center;">
+                    <div class="feature-icon">🏥</div>
+                    <h3>Healthcare Providers</h3>
+                    <p>Integrate HealthSync with your EHR system to give patients unified access to their health records.</p>
+                    <a href="#" class="btn btn-outline" style="margin-top: 1rem;">Learn More</a>
+                </div>
+                <div class="feature-card" style="text-align: center;">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Research Institutions</h3>
+                    <p>Access anonymized, aggregated health data for medical research and population health studies.</p>
+                    <a href="#" class="btn btn-outline" style="margin-top: 1rem;">Learn More</a>
+                </div>
+                <div class="feature-card" style="text-align: center;">
+                    <div class="feature-icon">💼</div>
+                    <h3>Enterprise Solutions</h3>
+                    <p>Implement HealthSync for your organization to improve employee health data management.</p>
+                    <a href="#" class="btn btn-outline" style="margin-top: 1rem;">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="problem-section" style="padding: 5rem 0; background: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Frequently Asked Questions</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item" style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Is my health data secure with HealthSync?</h3>
+                    <p style="color: var(--text-light);">Yes, we use bank-level encryption and are fully HIPAA compliant. Your data is encrypted end-to-end and you maintain full control over who can access it.</p>
+                </div>
+                <div class="faq-item" style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">How do I connect my hospital records?</h3>
+                    <p style="color: var(--text-light);">We partner with major healthcare providers and EHR systems. You can authorize HealthSync to access your records through secure, standardized APIs.</p>
+                </div>
+                <div class="faq-item" style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Can I share specific data with different providers?</h3>
+                    <p style="color: var(--text-light);">Absolutely. You have granular control over what data each provider can see and for how long. You can revoke access at any time.</p>
+                </div>
+                <div class="faq-item" style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">What happens if I change healthcare providers?</h3>
+                    <p style="color: var(--text-light);">Your data stays with you. You can easily connect your new provider and share relevant health history without starting from scratch.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Unify Your Health Data?</h2>
+            <p>Join thousands of users who have taken control of their health information with HealthSync.</p>
+            <div class="cta-buttons">
+                <a href="signup.html" class="btn btn-large">Start Free Trial</a>
+                <a href="support.html" class="btn btn-large btn-outline">Get Support</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">H</div>
+                        <span>HealthSync</span>
+                    </div>
+                    <p>Unifying healthcare data for better patient outcomes.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="about.html">Features</a></li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Careers</a></li>
+                        <li><a href="contact.html">Press</a></li>
+                        <li><a href="contact.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Data Security</a></li>
+                        <li><a href="#">HIPAA Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HealthSync. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                // Show success message
+                alert('Thank you for your message! We will get back to you within 24 hours.');
+                
+                // Reset form
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // Form validation
+        const form = document.getElementById('contactForm');
+        const inputs = form.querySelectorAll('input, select, textarea');
+        
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (!this.value && this.hasAttribute('required')) {
+                    this.style.borderColor = 'var(--danger)';
+                } else {
+                    this.style.borderColor = '';
+                }
+            });
+            
+            input.addEventListener('input', function() {
+                this.style.borderColor = '';
+            });
+        });
+    </script>
+</body>
+</html>
