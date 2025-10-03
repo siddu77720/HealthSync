@@ -331,3 +331,329 @@
                         </div>
                     </div>
                 </div>
+                                <!-- Data Sharing Page -->
+                <div id="sharing-page" class="page">
+                    <div class="page-header">
+                        <h2>Data Sharing Controls</h2>
+                        <p>Manage who can access your health information</p>
+                    </div>
+
+                    <div class="sharing-controls">
+                        <div class="control-group">
+                            <h3>Global Sharing Settings</h3>
+                            <div class="toggle-group">
+                                <label class="toggle-label">
+                                    <span>Allow emergency access</span>
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <label class="toggle-label">
+                                    <span>Share with researchers (anonymous)</span>
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <h3>Data Categories</h3>
+                            <div class="category-grid">
+                                <div class="category-card">
+                                    <h4>Medical Records</h4>
+                                    <p>Lab results, diagnoses, procedures</p>
+                                    <label class="toggle-label small">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="category-card">
+                                    <h4>Vital Signs</h4>
+                                    <p>Blood pressure, heart rate, weight</p>
+                                    <label class="toggle-label small">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="category-card">
+                                    <h4>Medications</h4>
+                                    <p>Prescriptions and dosages</p>
+                                    <label class="toggle-label small">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="category-card">
+                                    <h4>Lifestyle Data</h4>
+                                    <p>Exercise, sleep, nutrition</p>
+                                    <label class="toggle-label small">
+                                        <input type="checkbox">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <h3>Active Sharing Sessions</h3>
+                            <div class="sharing-sessions">
+                                <div class="session-card">
+                                    <div class="session-info">
+                                        <h4>Dr. Sarah Johnson</h4>
+                                        <p>Access expires in 3 days</p>
+                                    </div>
+                                    <button class="btn btn-outline btn-small">Revoke</button>
+                                </div>
+                                <div class="session-card">
+                                    <div class="session-info">
+                                        <h4>Emergency Services</h4>
+                                        <p>Always available</p>
+                                    </div>
+                                    <button class="btn btn-outline btn-small">Manage</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Page -->
+                <div id="emergency-page" class="page">
+                    <div class="emergency-header">
+                        <h2>Emergency Information</h2>
+                        <p>Critical health data for emergency situations</p>
+                    </div>
+
+                    <div class="emergency-grid">
+                        <div class="emergency-card critical">
+                            <h3>🆘 Emergency Contacts</h3>
+                            <div class="contact-list">
+                                <div class="contact-item">
+                                    <span class="contact-name">Sarah Wilson (Spouse)</span>
+                                    <span class="contact-phone">+1 (555) 123-4567</span>
+                                </div>
+                                <div class="contact-item">
+                                    <span class="contact-name">Dr. Michael Chen</span>
+                                    <span class="contact-phone">+1 (555) 987-6543</span>
+                                </div>
+                                <div class="contact-item">
+                                    <span class="contact-name">Emergency Services</span>
+                                    <span class="contact-phone">911</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline" onclick="editEmergencyContacts()">Edit Contacts</button>
+                        </div>
+
+                        <div class="emergency-card">
+                            <h3>💊 Current Medications</h3>
+                            <ul class="medication-list">
+                                <li>Lisinopril 10mg - Daily (for Hypertension)</li>
+                                <li>Atorvastatin 20mg - Daily (for Cholesterol)</li>
+                                <li>Albuterol Inhaler - As needed (for Asthma)</li>
+                                <li>Metformin 500mg - Twice daily (for Diabetes)</li>
+                            </ul>
+                            <button class="btn btn-outline" onclick="editMedications()">Edit Medications</button>
+                        </div>
+
+                        <div class="emergency-card">
+                            <h3>⚠️ Allergies & Reactions</h3>
+                            <div class="allergy-list">
+                                <span class="allergy-tag severe">Penicillin (Severe)</span>
+                                <span class="allergy-tag moderate">Shellfish (Moderate)</span>
+                                <span class="allergy-tag mild">Iodine (Mild)</span>
+                            </div>
+                            <div class="reaction-info">
+                                <p><strong>Penicillin Reaction:</strong> Anaphylaxis, difficulty breathing</p>
+                                <p><strong>Shellfish Reaction:</strong> Hives, swelling</p>
+                            </div>
+                            <button class="btn btn-outline" onclick="editAllergies()">Edit Allergies</button>
+                        </div>
+
+                        <div class="emergency-card">
+                            <h3>🏥 Medical Conditions</h3>
+                            <ul class="condition-list">
+                                <li>Hypertension (Diagnosed 2018)</li>
+                                <li>Type 2 Diabetes (Diagnosed 2020)</li>
+                                <li>High Cholesterol (Diagnosed 2019)</li>
+                                <li>Asthma (Childhood)</li>
+                            </ul>
+                            <div class="condition-notes">
+                                <p><strong>Recent Procedures:</strong> Cataract surgery (2022)</p>
+                                <p><strong>Blood Type:</strong> O+</p>
+                            </div>
+                            <button class="btn btn-outline" onclick="editConditions()">Edit Conditions</button>
+                        </div>
+                    </div>
+
+                    <div class="emergency-actions">
+                        <button class="btn btn-danger emergency-btn" onclick="shareEmergencyInfo()">
+                            🆘 Share Emergency Information
+                        </button>
+                        <p class="emergency-note">
+                            This will immediately share your critical health information with all emergency contacts and nearby medical facilities.
+                        </p>
+                        
+                        <div class="emergency-backup">
+                            <h4>Emergency Access Methods</h4>
+                            <div class="access-methods">
+                                <button class="btn btn-outline" onclick="generateEmergencyQR()">
+                                    📱 Generate Emergency QR Code
+                                </button>
+                                <button class="btn btn-outline" onclick="printEmergencyCard()">
+                                    🖨️ Print Emergency Card
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Page -->
+                <div id="settings-page" class="page">
+                    <div class="page-header">
+                        <h2>Account Settings</h2>
+                        <p>Manage your HealthSync account preferences and security</p>
+                    </div>
+
+                    <div class="settings-grid">
+                        <div class="settings-card">
+                            <h3>👤 Profile Information</h3>
+                            <form class="settings-form" id="profile-form">
+                                <div class="form-group">
+                                    <label for="profile-name">Full Name</label>
+                                    <input type="text" id="profile-name" value="John Doe" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-email">Email Address</label>
+                                    <input type="email" id="profile-email" value="john.doe@example.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-phone">Phone Number</label>
+                                    <input type="tel" id="profile-phone" value="+1 (555) 123-4567">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-dob">Date of Birth</label>
+                                    <input type="date" id="profile-dob" value="1985-06-15">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-address">Address</label>
+                                    <textarea id="profile-address" rows="3">123 Main Street, City, State 12345</textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Update Profile</button>
+                            </form>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>🔒 Security & Privacy</h3>
+                            <div class="security-options">
+                                <div class="security-item">
+                                    <span>Password</span>
+                                    <button class="btn btn-outline btn-small" onclick="changePassword()">Change</button>
+                                </div>
+                                <div class="security-item">
+                                    <span>Two-Factor Authentication</span>
+                                    <button class="btn btn-outline btn-small" onclick="setupTwoFactor()">Enable</button>
+                                </div>
+                                <div class="security-item">
+                                    <span>Login History</span>
+                                    <button class="btn btn-outline btn-small" onclick="viewLoginHistory()">View</button>
+                                </div>
+                                <div class="security-item">
+                                    <span>Data Export</span>
+                                    <button class="btn btn-outline btn-small" onclick="exportAllData()">Download</button>
+                                </div>
+                            </div>
+
+                            <div class="privacy-settings">
+                                <h4>Privacy Preferences</h4>
+                                <label class="toggle-label">
+                                    <span>Share anonymous data for research</span>
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <label class="toggle-label">
+                                    <span>Receive health insights and tips</span>
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <label class="toggle-label">
+                                    <span>Allow data sharing with new providers</span>
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>🔔 Notifications</h3>
+                            <div class="notification-settings">
+                                <label class="toggle-label">
+                                    <span>Email notifications</span>
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <label class="toggle-label">
+                                    <span>SMS alerts</span>
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <label class="toggle-label">
+                                    <span>Push notifications</span>
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                
+                                <div class="notification-types">
+                                    <h4>Notification Types</h4>
+                                    <label class="toggle-label small">
+                                        <span>Appointment reminders</span>
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                    <label class="toggle-label small">
+                                        <span>Medication reminders</span>
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                    <label class="toggle-label small">
+                                        <span>Lab results available</span>
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                    <label class="toggle-label small">
+                                        <span>Health trend alerts</span>
+                                        <input type="checkbox">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-card danger-zone">
+                            <h3>⚠️ Danger Zone</h3>
+                            <div class="danger-actions">
+                                <div class="danger-item">
+                                    <span>Delete all health data</span>
+                                    <p>Permanently remove all your health records from HealthSync</p>
+                                    <button class="btn btn-outline btn-small btn-danger" onclick="deleteAllData()">Delete Data</button>
+                                </div>
+                                <div class="danger-item">
+                                    <span>Deactivate account</span>
+                                    <p>Temporarily disable your HealthSync account</p>
+                                    <button class="btn btn-outline btn-small btn-danger" onclick="deactivateAccount()">Deactivate</button>
+                                </div>
+                                <div class="danger-item">
+                                    <span>Permanently delete account</span>
+                                    <p>This action cannot be undone</p>
+                                    <button class="btn btn-outline btn-small btn-danger" onclick="deleteAccount()">Delete Account</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
