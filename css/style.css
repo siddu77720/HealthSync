@@ -535,3 +535,105 @@ body {
         font-size: 2.5rem;
     }
 }
+/* Indian Healthcare Specific Styles */
+.indian-healthcare {
+    background: linear-gradient(135deg, #ff9933 0%, #ffffff 50%, #138808 100%);
+}
+
+.ayush-integration {
+    background: #f0fdf4;
+    border-left: 4px solid #059669;
+}
+
+.regional-support {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #f8fafc;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+}
+
+.language-selector {
+    padding: 0.5rem;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    background: white;
+    font-size: 0.875rem;
+}
+
+/* Healthcare Programs */
+.healthcare-programs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.program-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    text-align: center;
+}
+
+.program-card h4 {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.program-card p {
+    color: var(--text-light);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+/* Emergency Services India */
+.emergency-india {
+    background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.emergency-india h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.emergency-number {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+/* Trust Badges */
+.trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.trust-badge {
+    text-align: center;
+    padding: 1rem;
+}
+
+.trust-badge img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.5rem;
+}
+
+.trust-badge span {
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
