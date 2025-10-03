@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - HealthSync</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.75rem;">
+                    <div class="logo-icon">H</div>
+                    <span>HealthSync</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="support.html" class="nav-link">Support</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link login-btn" id="logout-btn">Logout</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="user-profile">
+                <div class="user-avatar-large">
+                    <span id="user-initial">U</span>
+                </div>
+                <div class="user-info">
+                    <h3 id="user-name">User Name</h3>
+                    <p id="user-email">user@example.com</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-page="overview">
+                    <span class="nav-icon">📊</span>
+                    <span>Health Overview</span>
+                </a>
+                <a href="#" class="nav-item" data-page="health-data">
+                    <span class="nav-icon">❤️</span>
+                    <span>My Health Data</span>
+                </a>
+                <a href="#" class="nav-item" data-page="providers">
+                    <span class="nav-icon">🏥</span>
+                    <span>Providers</span>
+                </a>
+                <a href="#" class="nav-item" data-page="sharing">
+                    <span class="nav-icon">🔗</span>
+                    <span>Data Sharing</span>
+                </a>
+                <a href="#" class="nav-item" data-page="emergency">
+                    <span class="nav-icon">🆘</span>
+                    <span>Emergency</span>
+                </a>
+                <a href="#" class="nav-item" data-page="settings">
+                    <span class="nav-icon">⚙️</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="data-security">
+                    <div class="security-status">
+                        <span class="security-icon">🔒</span>
+                        <span>All Data Encrypted</span>
+                    </div>
+                    <button class="btn btn-outline btn-small" onclick="exportHealthData()">Export Data</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1 id="page-title">Health Overview</h1>
+                    <p id="page-subtitle">Welcome to your unified health dashboard</p>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <div class="search-box">
+                            <input type="text" placeholder="Search health records..." class="search-input">
+                            <span class="search-icon">🔍</span>
+                        </div>
+                        <button class="btn btn-primary" id="add-data-btn">
+                            <span>+</span>
+                            Add Data
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Overview Page -->
+                <div id="overview-page" class="page active">
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon primary">📊</div>
+                            <div class="stat-info">
+                                <h3 id="total-records">0</h3>
+                                <p>Total Health Records</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon secondary">🏥</div>
+                            <div class="stat-info">
+                                <h3 id="data-sources">0</h3>
+                                <p>Connected Sources</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon warning">🔗</div>
+                            <div class="stat-info">
+                                <h3 id="shared-providers">0</h3>
+                                <p>Shared With Providers</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon success">📈</div>
+                            <div class="stat-info">
+                                <h3 id="last-update">Today</h3>
+                                <p>Last Updated</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Health Metrics -->
+                    <div class="section">
+                        <h2 class="section-title">Current Health Metrics</h2>
+                        <div class="metrics-grid" id="health-metrics">
+                            <!-- Metrics will be loaded by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Content Grid -->
+                    <div class="content-grid">
+                        <div class="card recent-activity">
+                            <div class="card-header">
+                                <h3>Recent Activity</h3>
+                                <a href="#" class="view-all">View All</a>
+                            </div>
+                            <div id="recent-data-list" class="activity-list">
+                                <!-- Recent activity will be loaded here -->
+                            </div>
+                        </div>
+
+                        <div class="card data-sources">
+                            <div class="card-header">
+                                <h3>Connected Data Sources</h3>
+                                <a href="#" class="view-all">Manage</a>
+                            </div>
+                            <div id="sources-list" class="sources-list">
+                                <!-- Data sources will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Health Trends -->
+                    <div class="section">
+                        <h2 class="section-title">Health Trends</h2>
+                        <div class="charts-grid">
+                            <div class="card chart-card">
+                                <h3>Blood Pressure Trend</h3>
+                                <div id="blood-pressure-chart" class="chart-container">
+                                    <!-- Chart will be rendered here -->
+                                </div>
+                            </div>
+                            <div class="card chart-card">
+                                <h3>Heart Rate Overview</h3>
+                                <div class="chart-placeholder">
+                                    <div class="placeholder-text">Heart rate data visualization</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Data Page -->
+                <div id="health-data-page" class="page">
+                    <div class="page-header">
+                        <h2>My Health Data</h2>
+                        <div class="page-actions">
+                            <button class="btn btn-primary" id="add-health-data-btn">
+                                <span>+</span>
+                                Add Record
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="data-filters">
+                        <select id="data-type-filter" class="filter-select">
+                            <option value="all">All Data Types</option>
+                            <option value="blood_pressure">Blood Pressure</option>
+                            <option value="heart_rate">Heart Rate</option>
+                            <option value="weight">Weight</option>
+                            <option value="glucose">Glucose</option>
+                            <option value="medication">Medication</option>
+                        </select>
+                        <select id="source-filter" class="filter-select">
+                            <option value="all">All Sources</option>
+                            <option value="manual">Manual Entry</option>
+                            <option value="wearable">Wearable</option>
+                            <option value="hospital">Hospital</option>
+                            <option value="clinic">Clinic</option>
+                        </select>
+                        <input type="date" id="date-filter" class="filter-select" placeholder="Select date">
+                    </div>
+
+                    <div class="data-table-container">
+                        <div class="table-header">
+                            <div class="table-row">
+                                <div class="table-cell">Type</div>
+                                <div class="table-cell">Value</div>
+                                <div class="table-cell">Source</div>
+                                <div class="table-cell">Date</div>
+                                <div class="table-cell">Actions</div>
+                            </div>
+                        </div>
+                        <div id="health-data-table" class="table-body">
+                            <!-- Health data will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Providers Page -->
+                <div id="providers-page" class="page">
+                    <div class="page-header">
+                        <h2>Healthcare Providers</h2>
+                        <button class="btn btn-primary" id="add-provider-btn">
+                            <span>+</span>
+                            Add Provider
+                        </button>
+                    </div>
+
+                    <div class="providers-grid">
+                        <div class="provider-card">
+                            <div class="provider-header">
+                                <div class="provider-avatar">🏥</div>
+                                <div class="provider-info">
+                                    <h3>City General Hospital</h3>
+                                    <p>Primary Care • Connected</p>
+                                </div>
+                            </div>
+                            <div class="provider-stats">
+                                <div class="stat">
+                                    <span class="stat-number">45</span>
+                                    <span class="stat-label">Records</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">2</span>
+                                    <span class="stat-label">Doctors</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline share-btn shared" data-provider="city-hospital">
+                                Sharing Data ✓
+                            </button>
+                        </div>
+
+                        <div class="provider-card">
+                            <div class="provider-header">
+                                <div class="provider-avatar">🩺</div>
+                                <div class="provider-info">
+                                    <h3>Heart Specialist Clinic</h3>
+                                    <p>Cardiology • Connected</p>
+                                </div>
+                            </div>
+                            <div class="provider-stats">
+                                <div class="stat">
+                                    <span class="stat-number">23</span>
+                                    <span class="stat-label">Records</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">1</span>
+                                    <span class="stat-label">Doctor</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline share-btn" data-provider="heart-clinic">
+                                Share Data
+                            </button>
+                        </div>
+
+                        <div class="provider-card">
+                            <div class="provider-header">
+                                <div class="provider-avatar">💊</div>
+                                <div class="provider-info">
+                                    <h3>Local Pharmacy</h3>
+                                    <p>Medications • Pending</p>
+                                </div>
+                            </div>
+                            <div class="provider-stats">
+                                <div class="stat">
+                                    <span class="stat-number">12</span>
+                                    <span class="stat-label">Prescriptions</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">-</span>
+                                    <span class="stat-label">Pharmacist</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline" disabled>
+                                Connect First
+                            </button>
+                        </div>
+                    </div>
+                </div>
