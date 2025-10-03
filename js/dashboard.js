@@ -219,3 +219,229 @@ function simulateChartRendering(chartId, data) {
         `;
     }
 }
+function setupEventListeners() {
+    // Navigation between dashboard pages
+    const navItems = document.querySelectorAll('.nav-item[data-page]');
+    navItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetPage = this.getAttribute('data-page');
+            switchPage(targetPage);
+        });
+    });
+    
+    // Add health data button
+    const addDataBtn = document.getElementById('add-data-btn');
+    if (addDataBtn) {
+        addDataBtn.addEventListener('click', showAddDataModal);
+    }
+    
+    // Logout functionality
+    const logoutBtn = document.getElementById('logout-btn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', handleLogout);
+    }
+    
+    // Data sharing controls
+    const shareBtns = document.querySelectorAll('.share-btn');
+    shareBtns.forEach(btn => {
+        btn.addEventListener('click', handleDataSharing);
+    });
+}
+
+function switchPage(pageId) {
+    // Hide all pages
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+    
+    // Show target page
+    const targetPage = document.getElementById(`${pageId}-page`);
+    if (targetPage) {
+        targetPage.classList.add('active');
+    }
+    
+    // Update active nav item
+    document.querySelectorAll('.nav-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    const activeNav = document.querySelector(`.nav-item[data-page="${pageId}"]`);
+    if (activeNav) {
+        activeNav.classList.add('active');
+    }
+    
+    // Update page title
+    const pageTitle = document.getElementById('page-title');
+    if (pageTitle) {
+        const titles = {
+            'overview': 'Health Overview',
+            'health-data': 'My Health Data',
+            'providers': 'Healthcare Providers',
+            'sharing': 'Data Sharing',
+            'settings': 'Settings'
+        };
+        pageTitle.textContent = titles[pageId] || 'Dashboard';
+    }
+}
+
+function showAddDataModal() {
+    // Create and show modal for adding health data
+    const modalHTML = `
+        <div id="addDataModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Add Health Data</h3>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <form id="addHealthDataForm">
+                        <div class="form-group">
+                            <label for="data-type">Data Type</label>
+                            <select id="data-type" name="dataType" required>
+                                <option value="">Select type</option>
+                                <option value="blood-pressure">Blood Pressure</option>
+                                <option value="heart-rate">Heart Rate</option>
+                                <option value="weight">Weight</option>
+                                <option value="glucose">Blood Glucose</option>
+                                <option value="medication">Medication</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="data-value">Value</label>
+                            <input type="text" id="data-value" name="dataValue" required placeholder="Enter value">
+                        </div>
+                        <div class="form-group">
+                            <label for="data-notes">Notes (Optional)</label>
+                            <textarea id="data-notes" name="notes" placeholder="Add any notes..."></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline cancel-btn">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Add Data</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    
+    // Setup modal event listeners
+    const modal = document.getElementById('addDataModal');
+    const closeBtn = modal.querySelector('.close');
+    const cancelBtn = modal.querySelector('.cancel-btn');
+    const form = modal.querySelector('#addHealthDataForm');
+    
+    closeBtn.addEventListener('click', () => modal.remove());
+    cancelBtn.addEventListener('click', () => modal.remove());
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        addHealthData(new FormData(this));
+        modal.remove();
+    });
+    
+    // Close modal on outside click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.remove();
+        }
+    });
+}
+
+function addHealthData(formData) {
+    const dataType = formData.get('dataType');
+    const dataValue = formData.get('dataValue');
+    const notes = formData.get('notes');
+    
+    // Simulate API call to add data
+    setTimeout(() => {
+        showNotification(`${dataType.replace('-', ' ')} data added successfully!`, 'success');
+        
+        // Refresh the health data display
+        loadHealthData();
+    }, 1000);
+}
+
+function handleLogout() {
+    if (confirm('Are you sure you want to log out?')) {
+        localStorage.removeItem('healthSyncUser');
+        showNotification('Logged out successfully', 'success');
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 1000);
+    }
+}
+
+function handleDataSharing(e) {
+    const button = e.target;
+    const providerId = button.getAttribute('data-provider');
+    
+    if (button.classList.contains('shared')) {
+        // Stop sharing
+        if (confirm(`Stop sharing data with ${providerId}?`)) {
+            button.classList.remove('shared');
+            button.textContent = 'Share Data';
+            showNotification(`Stopped sharing with ${providerId}`, 'success');
+        }
+    } else {
+        // Start sharing
+        button.classList.add('shared');
+        button.textContent = 'Sharing ✓';
+        showNotification(`Now sharing data with ${providerId}`, 'success');
+    }
+}
+
+// Data export functionality
+function exportHealthData() {
+    const userData = JSON.parse(localStorage.getItem('healthSyncUser'));
+    const healthData = getSimulatedHealthData();
+    
+    const exportData = {
+        user: userData,
+        healthData: healthData,
+        exportDate: new Date().toISOString()
+    };
+    
+    const dataStr = JSON.stringify(exportData, null, 2);
+    const dataBlob = new Blob([dataStr], { type: 'application/json' });
+    
+    const url = URL.createObjectURL(dataBlob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `healthsync-export-${new Date().toISOString().split('T')[0]}.json`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    
+    showNotification('Health data exported successfully!', 'success');
+}
+
+// Search functionality for health data
+function setupSearch() {
+    const searchInput = document.querySelector('.search-input');
+    if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            filterHealthData(searchTerm);
+        });
+    }
+}
+
+function filterHealthData(searchTerm) {
+    const healthItems = document.querySelectorAll('.health-data-item');
+    
+    healthItems.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(searchTerm)) {
+            item.style.display = 'flex';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+// Initialize search when DOM is loaded
+document.addEventListener('DOMContentLoaded', setupSearch);
