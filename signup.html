@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - HealthSync</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">H</div>
+                <span>HealthSync</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="support.html" class="nav-link">Support</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link login-btn">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="signup.html" class="nav-link signup-btn active">Sign Up</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Signup Section -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h1>Join HealthSync Today</h1>
+                    <p>Take control of your health data and end the fragmentation crisis</p>
+                </div>
+
+                <form class="auth-form" id="signupForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required placeholder="Enter your first name">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required placeholder="Enter your last name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required placeholder="Create a password">
+                        <div class="password-strength">
+                            <div class="strength-bar"></div>
+                            <span class="strength-text">Password strength</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm your password">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="agreeTerms" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="healthDataConsent">
+                            <span class="checkmark"></span>
+                            I consent to securely aggregate my health data from connected sources
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">Create My HealthSync Account</button>
+                </form>
+
+                <div class="auth-divider">
+                    <span>Start connecting your health data</span>
+                </div>
+
+                <div class="data-sources-connect">
+                    <h3>Connect Your Health Sources</h3>
+                    <div class="sources-grid">
+                        <div class="source-item">
+                            <span class="source-icon">🏥</span>
+                            <span>Hospital Records</span>
+                        </div>
+                        <div class="source-item">
+                            <span class="source-icon">💊</span>
+                            <span>Pharmacy Data</span>
+                        </div>
+                        <div class="source-item">
+                            <span class="source-icon">⌚</span>
+                            <span>Wearables</span>
+                        </div>
+                        <div class="source-item">
+                            <span class="source-icon">📱</span>
+                            <span>Health Apps</span>
+                        </div>
+                        <div class="source-item">
+                            <span class="source-icon">🩺</span>
+                            <span>Clinic Visits</span>
+                        </div>
+                        <div class="source-item">
+                            <span class="source-icon">🧪</span>
+                            <span>Lab Results</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="login.html">Sign in here</a></p>
+                </div>
+            </div>
+
+            <!-- Benefits Sidebar -->
+            <div class="auth-benefits">
+                <h2>Your Health Data Revolution Starts Here</h2>
+                <div class="problem-highlight">
+                    <h3>The Problem We Solve:</h3>
+                    <p>"68% of medical errors stem from communication gaps and incomplete information due to fragmented health data."</p>
+                </div>
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">📊</div>
+                        <div class="benefit-content">
+                            <h4>Unified Health Picture</h4>
+                            <p>See all your medical information in one dashboard - no more scattered records</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🔐</div>
+                        <div class="benefit-content">
+                            <h4>Complete Control</h4>
+                            <p>You decide who sees your data and for how long with granular permissions</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🔄</div>
+                        <div class="benefit-content">
+                            <h4>Automatic Sync</h4>
+                            <p>Connect once and your data stays updated across all providers</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">👨‍⚕️</div>
+                        <div class="benefit-content">
+                            <h4>Smarter Care</h4>
+                            <p>Give your doctors complete information for better diagnosis and treatment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "HealthSync helped me avoid repeated tests and gave my cardiologist the complete picture they needed. This is healthcare as it should be."
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Sarah M.</strong>, Patient since 2023
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

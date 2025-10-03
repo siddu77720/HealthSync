@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - HealthSync</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.75rem;">
+                    <div class="logo-icon">H</div>
+                    <span>HealthSync</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="support.html" class="nav-link">Support</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link login-btn active">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="signup.html" class="nav-link signup-btn">Sign Up</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h1>Welcome Back to HealthSync</h1>
+                    <p>Access your unified health dashboard and take control of your medical data</p>
+                </div>
+
+                <form class="auth-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required placeholder="Enter your password">
+                        <div class="password-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="rememberMe">
+                                <span class="checkmark"></span>
+                                Remember me
+                            </label>
+                            <a href="#" class="forgot-password">Forgot password?</a>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">Access My Health Dashboard</button>
+                </form>
+
+                <div class="auth-divider">
+                    <span>Or continue with</span>
+                </div>
+
+                <div class="social-auth">
+                    <button class="btn btn-outline btn-social">
+                        <span class="social-icon">🏥</span>
+                        Connect Hospital Account
+                    </button>
+                    <button class="btn btn-outline btn-social">
+                        <span class="social-icon">⌚</span>
+                        Sync Wearable Data
+                    </button>
+                </div>
+
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="signup.html">Create your HealthSync account</a></p>
+                </div>
+
+                <!-- Healthcare Data Benefits -->
+                <div class="health-benefits">
+                    <h3>With HealthSync, you'll get:</h3>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">📊</span>
+                            <span>Unified view of all your medical records</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🔒</span>
+                            <span>Complete control over who sees your data</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🔄</span>
+                            <span>Automatic sync across all healthcare providers</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">📈</span>
+                            <span>Personalized health insights and trends</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Healthcare Problem Solution -->
+            <div class="solution-sidebar">
+                <div class="solution-card">
+                    <h2>Solving Healthcare Data Fragmentation</h2>
+                    <div class="problem-stats">
+                        <div class="problem-stat">
+                            <div class="stat-number">68%</div>
+                            <div class="stat-label">of medical errors due to incomplete information</div>
+                        </div>
+                        <div class="problem-stat">
+                            <div class="stat-number">$78B</div>
+                            <div class="stat-label">wasted annually on repeated tests</div>
+                        </div>
+                        <div class="problem-stat">
+                            <div class="stat-number">45%</div>
+                            <div class="stat-label">of patients have scattered health records</div>
+                        </div>
+                    </div>
+
+                    <div class="solution-features">
+                        <h3>How HealthSync Helps:</h3>
+                        <ul>
+                            <li>✅ Aggregate data from hospitals, clinics, and wearables</li>
+                            <li>✅ Eliminate repeated tests and procedures</li>
+                            <li>✅ Prevent medication errors with complete history</li>
+                            <li>✅ Enable better care coordination between providers</li>
+                            <li>✅ Give you control over your health information</li>
+                        </ul>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="testimonial-text">
+                            "HealthSync helped me avoid duplicate tests and gave my doctors the complete picture they needed for accurate diagnosis."
+                        </div>
+                        <div class="testimonial-author">
+                            - Sarah M., Diabetes Patient
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
