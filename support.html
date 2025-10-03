@@ -61,7 +61,7 @@
         <div class="container">
             <div class="hero-container" style="grid-template-columns: 1fr; text-align: center; gap: 2rem;">
                 <div class="hero-content">
-                    <h1 class="hero-title">HealthSync Support Center 🇮🇳</h1>
+                    <h1 class="hero-title">HealthSync Support Center </h1>
                     <p class="hero-description">
                         "As a diabetes patient in Chennai, I was managing records across 4 different hospitals. 
                         HealthSync brought everything together. Now my new doctor gets my complete history in seconds."
@@ -199,3 +199,294 @@
             </div>
         </div>
     </section>
+        <!-- FAQ Section -->
+    <section id="faq" class="problem-section" style="padding: 5rem 0; background: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Frequently Asked Questions</h2>
+            
+            <!-- Search Bar -->
+            <div style="max-width: 500px; margin: 0 auto 2rem; position: relative;">
+                <input type="text" id="supportSearch" placeholder="Search for help..." style="width: 100%; padding: 1rem 1rem 1rem 3rem; border: 1px solid var(--border-light); border-radius: var(--radius-lg); font-size: 1rem;">
+                <span style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-light);">🔍</span>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item" style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); cursor: pointer;" onclick="toggleFAQ(this)">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                        Is my health data secure with HealthSync in India?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer" style="display: none; color: var(--text-light); margin-top: 1rem;">
+                        <p>Yes, HealthSync uses bank-level encryption and complies with Indian data protection laws. Your data is encrypted end-to-end, and we never store your personal health information in plain text. We have servers located in India to ensure compliance with local regulations.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); cursor: pointer;" onclick="toggleFAQ(this)">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                        How do I connect my hospital records from Apollo, Fortis, or other Indian hospitals?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer" style="display: none; color: var(--text-light); margin-top: 1rem;">
+                        <p>We partner with major Indian healthcare providers including Apollo, Fortis, Max, AIIMS, and many others. You can authorize HealthSync to access your records through secure, standardized APIs. Simply go to your dashboard, click "Add Data Source," select your healthcare provider from our list of Indian hospitals, and follow the authorization process.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); cursor: pointer;" onclick="toggleFAQ(this)">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                        Can I integrate my AYUSH treatment records with modern medical data?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer" style="display: none; color: var(--text-light); margin-top: 1rem;">
+                        <p>Absolutely! HealthSync supports integration with Ayurveda, Yoga, Naturopathy, Unani, Siddha, and Homeopathy (AYUSH) treatments. You can manually enter your AYUSH treatment records or connect with registered AYUSH practitioners who use our system. This gives your doctors a complete picture of all treatments you're receiving.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); cursor: pointer;" onclick="toggleFAQ(this)">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                        What happens if I move to a different city in India?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer" style="display: none; color: var(--text-light); margin-top: 1rem;">
+                        <p>Your HealthSync data travels with you! When you move to a new city, you can easily connect with local healthcare providers there. Your complete medical history from previous cities remains accessible, so new doctors have your full background without you having to carry physical files or repeat tests.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); cursor: pointer;" onclick="toggleFAQ(this)">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                        How does HealthSync handle emergency situations in India?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer" style="display: none; color: var(--text-light); margin-top: 1rem;">
+                        <p>HealthSync includes emergency features tailored for India. You can set up emergency contacts, create an emergency health profile with critical information in local languages, and generate a QR code that Indian emergency responders can scan. We also integrate with major ambulance services and emergency numbers like 108 and 102.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); cursor: pointer;" onclick="toggleFAQ(this)">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                        Is HealthSync available in regional Indian languages?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer" style="display: none; color: var(--text-light); margin-top: 1rem;">
+                        <p>Yes! HealthSync is available in Hindi, Tamil, Telugu, Bengali, Marathi, Gujarati, Kannada, and Malayalam. You can switch languages anytime from the navigation menu. Our support team also provides assistance in these regional languages.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); cursor: pointer;" onclick="toggleFAQ(this)">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                        How much does HealthSync cost for Indian users?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer" style="display: none; color: var(--text-light); margin-top: 1rem;">
+                        <p>HealthSync offers a free basic plan that includes core features for individual users. We also have premium plans starting at ₹299/month for advanced features and family plans. Special discounts are available for senior citizens and students.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Support Section -->
+    <section id="contact-support" class="features-section" style="padding: 5rem 0;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 class="section-title">Still Need Help? We're Here for You 🇮🇳</h2>
+                <p style="font-size: 1.125rem; color: var(--text-light); margin-bottom: 2rem;">
+                    Our Indian support team understands the unique challenges of healthcare in India and is ready to assist you.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">📞</div>
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">India Toll-Free</h3>
+                        <p style="color: var(--text-light);">1800-266-HEALTH (4325)</p>
+                        <p style="font-size: 0.875rem; color: var(--text-light);">Mon-Sat, 8AM-8PM IST</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">📱</div>
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">WhatsApp Support</h3>
+                        <p style="color: var(--text-light);">+91-9876543210</p>
+                        <p style="font-size: 0.875rem; color: var(--text-light);">Quick support via WhatsApp</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">✉️</div>
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Email Support</h3>
+                        <p style="color: var(--text-light);">support@healthsync.in</p>
+                        <p style="font-size: 0.875rem; color: var(--text-light);">Response within 4 hours</p>
+                    </div>
+                </div>
+                
+                <div style="background: var(--bg-light); padding: 2rem; border-radius: var(--radius-lg);">
+                    <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Emergency Health Data Issues</h3>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem;">
+                        For urgent health data matters that could impact patient care in India:
+                    </p>
+                    <div class="emergency-india">
+                        <h4>🇮🇳 India Emergency Support</h4>
+                        <div class="emergency-number">+91-9876543210</div>
+                        <p style="font-size: 0.875rem; opacity: 0.9;">24/7 emergency support for critical health data situations</p>
+                    </div>
+                    <div style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-light);">
+                        <p><strong>Medical Emergencies:</strong> Call 108 or 102 (Ambulance)</p>
+                        <p><strong>Mental Health:</strong> 080-46110007 (Vandrevala Foundation)</p>
+                        <p><strong>Poison Control:</strong> 1800-116-117 (National Poisons Information Centre)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Take Control of Your Health Data in India?</h2>
+            <p>Join thousands of Indian families who have unified their health information with HealthSync.</p>
+            <div class="cta-buttons">
+                <a href="signup.html" class="btn btn-large">Start Free Trial</a>
+                <a href="dashboard.html" class="btn btn-large btn-outline">View Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">H</div>
+                        <span>HealthSync</span>
+                    </div>
+                    <p>Unifying healthcare data for better patient outcomes across India.</p>
+                    <div style="margin-top: 1rem;">
+                        <p style="font-size: 0.875rem; color: #cbd5e1;">Registered Office: HealthSync India Pvt. Ltd.<br>
+                        Mumbai, Maharashtra - 400001<br>
+                        CIN: U74999MH2023PTC123456</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="about.html">Features</a></li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Careers</a></li>
+                        <li><a href="contact.html">Press</a></li>
+                        <li><a href="contact.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Data Security</a></li>
+                        <li><a href="#">HIPAA Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HealthSync India Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // FAQ Toggle Functionality
+        function toggleFAQ(element) {
+            const answer = element.querySelector('.faq-answer');
+            const toggle = element.querySelector('.faq-toggle');
+            
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                toggle.textContent = '+';
+            } else {
+                answer.style.display = 'block';
+                toggle.textContent = '−';
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Support search functionality
+        function searchSupport() {
+            const searchTerm = document.getElementById('supportSearch').value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+            let found = false;
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('h3').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    found = true;
+                    // Auto-expand matching items
+                    item.querySelector('.faq-answer').style.display = 'block';
+                    item.querySelector('.faq-toggle').textContent = '−';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            if (!found && searchTerm) {
+                alert('No results found for: ' + searchTerm);
+            } else if (!searchTerm) {
+                // Reset all items when search is cleared
+                faqItems.forEach(item => {
+                    item.style.display = 'block';
+                    item.querySelector('.faq-answer').style.display = 'none';
+                    item.querySelector('.faq-toggle').textContent = '+';
+                });
+            }
+        }
+
+        // Initialize FAQ items to be collapsed by default
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                item.querySelector('.faq-answer').style.display = 'none';
+                item.querySelector('.faq-toggle').textContent = '+';
+            });
+
+            // Add event listener for search input
+            const searchInput = document.getElementById('supportSearch');
+            if (searchInput) {
+                searchInput.addEventListener('input', searchSupport);
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        searchSupport();
+                    }
+                });
+            }
+
+            // Language selector functionality
+            const languageSelector = document.querySelector('.language-selector');
+            if (languageSelector) {
+                languageSelector.addEventListener('change', function() {
+                    const selectedLanguage = this.value;
+                    alert('Language changed to: ' + this.options[this.selectedIndex].text);
+                    // In a real implementation, this would change the page language
+                });
+            }
+        });
+    </script>
+</body>
+</html>
